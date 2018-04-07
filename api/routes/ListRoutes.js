@@ -25,9 +25,12 @@ module.exports = function(app){
 		.get(List.mostrarLavadosByFecha)
 		.delete(List.borrarLavadosByFecha);
 
-	app.route('/lavadoById/Id_Lavado')
+	app.route('/lavadoById/:Id_Lavado')
 		.get(List.mostrarLavadoById)
 		.put(List.borrarLavadoById);
+
+	app.route('/lavadoById_Usuario/:Id_Usuario')
+		.get(List.mostrarLavadoPorIdUsuario);
 
 
 	//ADMIN

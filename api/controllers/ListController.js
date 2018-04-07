@@ -90,7 +90,7 @@ var path = require('path');
 	};
 
 	exports.mostrarLavadoById = function(req, res){
-		Lavado.find({_id: req.params.Id_Lavado},function(err, lavado){
+		Lavado.findById(req.params.Id_Lavado,function(err, lavado){
 			if(err)
 				res.send(err);
 			res.json(lavado);
@@ -102,6 +102,14 @@ var path = require('path');
 			if(err)
 				res.send(err);
 			res.json({message: 'borrado Papu'});
+		});
+	};
+
+	exports.mostrarLavadoPorIdUsuario = function(req, res){
+		Lavado.find({_idUsuario: req.params.Id_Usuario}, function(err, lavado){
+			if(err)
+				res.send(err);
+			res.json(lavado);
 		});
 	};
 

@@ -48,14 +48,17 @@ var LavadoSchema = new Schema({
 		enum: ['tarjeta', 'efectivo'],
 		required :true
 	},
+	placa:{
+		type : String,
+		required: true
+	},
 	status: {
 		type: String,
 		enum: ['espera', 'terminado'],
 		default: 'Pendiente'
 	},
 	_idUsuario: {
-		type: Schema.Types.ObjectId,
-		ref: 'Usuario',
+		type: String,
 		required: true
 	}
 });
